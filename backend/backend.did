@@ -1,0 +1,15 @@
+type Product = 
+ record {
+   description: text;
+   id: nat;
+   image: text;
+   inventory: nat;
+   name: text;
+   price: float64;
+ };
+service : {
+  addToCart: (nat) -> (bool);
+  checkout: () -> (bool);
+  getProducts: () -> (vec Product) query;
+  removeFromCart: (nat) -> (bool);
+}
